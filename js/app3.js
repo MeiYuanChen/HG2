@@ -232,7 +232,16 @@ app.controller('mycommentlistCtrl',function($scope,$http){
     };
     //post数据  发布按钮
     $scope.sub=function(inputtext,infoid){
+        var error=angular.element("#formerror");
+        var success=angular.element("#formsuccess");
+        if(!inputtext){
 
+            error.fadeIn("slow");
+            setTimeout(function(){
+                error.fadeOut("slow");
+            },3000);
+            return false;
+        }
         var contentform_url=Heng.options.base_url+"/api/heng/updateComment"+"?Authorization="+Heng.getToken();
         var contentform_add={
             "ThemeId":infoid,

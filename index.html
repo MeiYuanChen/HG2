@@ -40,7 +40,7 @@
 
             <div class="main-img fz06 pr" >
                 <a class="tdn" ng-href="content.html#iid={{x.Id}}&{{lh}}" ng-click="updateReadTimes(x.Id)">
-                <h1 class="bule oh fz07 ml5 pt5" ng-bind="x.Title"></h1>
+                <h1 class="bule oh fz07 ml5 pt5"><span class="oh" ng-bind="x.Title"></span><span ng-if="x.Title.length>13">...</span></h1>
                 <div class="wrap mt3 oh">
                     <div class="imgDiv ">
                         <img ng-src="{{x.Thumbnail}}"/>
@@ -50,7 +50,7 @@
                 <div class="cb bule info pa">
                     <div class="fl">
                         <img src="img/icon1.png">
-                        阅读 （<span ng-bind="x.TotalReadTimes+400+addreadtimesCount"></span>）
+                        阅读 （<span ng-bind="x.TotalReadTimes+1"></span>）
                     </div>
                     <div class="fr">
                         <img src="img/icon2.png">

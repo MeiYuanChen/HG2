@@ -30,16 +30,16 @@
             <!--提示几条回复-->
             <div class="pa tips fz06 white" ng-if="x.Unread.UnreadCount">{{x.Unread.UnreadCount}}条回复</div>
             <!--标题 缩略图 等-->
-            <h2 class="fz063 bule" ng-bind="x.Theme.Title"></h2>
+                <h2 class="fz063 bule" ><span class="oh" ng-bind="x.Theme.Title"></span><span ng-if="x.Theme.Title.length>20">...</span></h2>
             <div class="imgDiv oh mt3"><img ng-src="{{x.Theme.Thumbnail}}"/></div>
             <div class="cb bule info fr fz06 mt3">
                 <div class="fl">
                     <img src="img/icon1.png">
-                    阅读 (<span ng-bind="x.Theme.TotalReadTimes+400">400</span>)
+                    阅读 (<span ng-bind="x.Theme.TotalReadTimes"></span>)
                 </div>
                 <div class="fr">
                     <img src="img/icon2.png">
-                    评论 (<span ng-bind="x.Theme.TotalCommentCount">5</span>)
+                    评论 (<span ng-bind="x.Theme.TotalCommentCount"></span>)
                 </div>
             </div>
             </a>

@@ -21,12 +21,12 @@
 
         <li class="content" ng-repeat="x in alllist">
             <a class="tdn" ng-href="content.html#iid={{x.Id}}&{{lh}}" ng-click="updateReadTimes(x.Id);">
-                <h2 class="fz063 bule" ng-bind="x.Title"></h2>
-                <div class="imgDiv oh mt3"><img src="img/new.jpg"/></div>
+                <h2 class="fz063 bule" ><span class="oh" ng-bind="x.Title"></span><span ng-if="x.Title.length>20">...</span></h2>
+                <div class="imgDiv oh mt3"><img ng-src="{{x.Thumbnail}}"/></div>
                 <div class="cb bule info fr fz06 mt3">
                     <div class="fl">
                         <img src="img/icon1.png" >
-                        阅读 (<span ng-bind="x.TotalReadTimes+400+addreadtimesCount"></span>)
+                        阅读 (<span ng-bind="x.TotalReadTimes+1"></span>)
                     </div>
                     <div class="fr">
                         <img src="img/icon2.png">

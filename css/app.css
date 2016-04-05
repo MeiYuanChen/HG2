@@ -81,7 +81,7 @@ p{text-overflow: ellipsis;word-break:break-all;}
 .indexbg .main-img span.more{left:5%;}
 .indexbg .main-img .wrap{width:86%;margin-left:5%;max-height:78.3%;}
 .indexbg .main-img .imgDiv img{width:100%;height:auto}
-
+.indexbg .main-img h1 .oh{width: 84%; height: .7rem;  display: inline-block;}
 .contentbg2{background: url("../img/contentbg2.png") no-repeat !important;background-size: 100% 100% !important;}
 /*话题内容*/
 .topic{background:url("../img/columnbg.jpg") repeat-y;background-size:100% auto;padding:0 .5rem;}
@@ -141,7 +141,7 @@ border-bottom-left-radius:0;border-bottom-right-radius:0;}
 .column .imgDiv img{height:auto}
 .column .imgDiv{height:5.5rem;}
 .column .info{width:65%}
-
+.column .content h2 .oh{height:.63rem;width:93%;display:inline-block}
 /*column2.html*/
 .column img.header{width:45%}
 .column .tips{background:url("../img/tips.png") no-repeat;background-size:100% 100%;padding:.1rem .2rem .3rem .2rem;top:0;right:.5rem;}

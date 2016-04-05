@@ -21,11 +21,11 @@
                 <div class="cb bule info fl fz06 mt3">
                     <div class="fl">
                         <img src="img/icon1.png">
-                        阅读 (<span ng-bind="info.TotalReadTimes+400">400</span>)
+                        阅读 (<span ng-bind="info.TotalReadTimes"></span>)
                     </div>
                     <div class="fr">
                         <img src="img/icon2.png">
-                        评论 (<span ng-bind="info.TotalCommentCount">5</span>)
+                        评论 (<span ng-bind="info.TotalCommentCount"></span>)
                     </div>
                 </div>
             </div>
@@ -93,7 +93,7 @@
                             </div>
                             <!--点赞按钮-->
                             <div class="box lh150 cb pr tored">
-                                赞 <span class="num" ng-bind="x.PraiseCount+5">5</span>
+                                赞 <span class="num" ng-bind="x.PraiseCount"></span>
                             </div>
                         </div>
                         <div ng-show="c">
@@ -103,7 +103,7 @@
                             </div>
                             <!--点赞按钮-->
                             <div class="box lh150 cb pr">
-                                赞 <span class="num" ng-bind="x.PraiseCount+5-1"></span>
+                                赞 <span class="num" ng-bind="x.PraiseCount-1"></span>
                             </div>
                         </div>
 
@@ -117,7 +117,7 @@
                             </div>
                             <!--点赞按钮-->
                             <div class="box lh150 cb pr">
-                                赞 <span class="num" ng-bind="x.PraiseCount+5"></span>
+                                赞 <span class="num" ng-bind="x.PraiseCount"></span>
                             </div>
                         </div>
                         <div ng-show="c">
@@ -127,7 +127,7 @@
                             </div>
                             <!--点赞按钮-->
                             <div class="box lh150 cb pr tored">
-                                赞 <span class="num" ng-bind="x.PraiseCount+5+1"></span>
+                                赞 <span class="num" ng-bind="x.PraiseCount+1"></span>
                             </div>
                         </div>
                     </div>
