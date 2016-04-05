@@ -2,7 +2,7 @@
 var Heng = {
 	options: {
 		// 接口域名基地址
-		base_url: "http://weixin.jxt189.com/WeiEngine/OAuth2/Authorization.aspx?appcode=5693024816932578630&type=snsapi_base&redirect_uri=http%3a%2f%2fhd.jxt189.com%2fheng2%2fsignin-weixinauth%3fredirectUri%3dhttp%253a%252f%252fhd.jxt189.com%252fheng2%252fAdmin%252fWeixin%252fAuthorize%253fredirectUri%253dhttp%253a%252f%252fmeiyuanchen.github.io%252fHG2%252f"
+		base_url: "http://hd.jxt189.com/heng2"
 	},
 	// 提取#后面的token
 	getParam: function(strParame) {
