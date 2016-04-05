@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>
+        恒哥有话说
+    </title>
+    <meta name="viewport" content="initial-scale=1">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/choumei.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <script src="js/heng.js"></script>
+    <script src="js/app3.js"></script>
+</head>
+
+<body class="indexbg" ng-app="myApp">
+
+
+<div class="swiper-container" ng-controller="lasthref">
+    <!--头部 头像 开始-->
+    <div class="header">
+        <img class="fl" src="img/header.png">
+        <div class="head fr pr " ng-controller="unreadInfo">
+            <a ng-href="mecolumn.html#{{lh}}">
+            <div class="imgDiv" ng-controller="weixin">
+                <img class="br100" ng-src="{{data.HeadImgUrl}}"/>
+            </div>
+            <div class="pa msgNum redbg white fz06 br100" ng-if="unread.AllCount" ><span ng-bind="unread.AllCount"></span></div>
+            </a>
+        </div>
+    </div>
+    <!--头部 头像 结束-->
+    <div class="swiper-wrapper" ng-controller="themepagesix" id="themeListWrapper">
+
+        <div class="swiper-slide" ng-repeat="x in list">
+
+            <div class="main-img fz06 pr" >
+                <a class="tdn" ng-href="content.html#iid={{x.Id}}&{{lh}}" ng-click="updateReadTimes(x.Id)">
+                <h1 class="bule oh fz07 ml5 pt5" ng-bind="x.Title"></h1>
+                <div class="wrap mt3 oh">
+                    <div class="imgDiv ">
+                        <img ng-src="{{x.Thumbnail}}"/>
+                    </div>
+                        <p class=" pr lh160 oh mt3 black" id="mainImgP" ng-bind="x.Desc"></p>
+                    </div>
+                <div class="cb bule info pa">
+                    <div class="fl">
+                        <img src="img/icon1.png">
+                        阅读 （<span ng-bind="x.TotalReadTimes+400+addreadtimesCount"></span>）
+                    </div>
+                    <div class="fr">
+                        <img src="img/icon2.png">
+                        评论 （<span ng-bind="x.TotalCommentCount"></span>）
+                    </div>
+                </div>
+                </a>
+            </div>
+
+        </div>
+
+
+
+        <!--最后一页 查看更多话题-->
+        <div class="swiper-slide">
+            <a ng-href="column.html#{{lh}}">
+            <div class="main-img fz03 pr contentbg2"></div>
+            </a>
+        </div>
+        <!--最后一页 查看更多话题-->
+    </div>
+</div>
+<div class="swiper-pagination w"></div>
+
+
+
+
+<script src="js/swiper.min.js"></script>
+<script src="js/choumei.min2.js"></script>
+
+</body>
+</html>

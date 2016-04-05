@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>恒哥有话说-话题内容</title>
+    <link rel="stylesheet" href="css/app.css">
+
+</head>
+<body class="whitebg" ng-App="myApp" ng-controller="themeinfo">
+<div class="greenbg pt5">
+    <div class="topic" >
+        <div class="header oh">
+            <a class="back fl" href="javascript:window.history.go(-1)"></a>
+            <h1 class="yellow fr fz08 lh120" ng-bind="info.Title"></h1>
+        </div>
+        <div class="content mt3 content2">
+            <div class="border fz06 lh150 mt3 oh" >
+                <div class="w" ng-bind-html="info.Content|trustHtml"></div>
+                <div class="cb"></div>
+                <div class="cb bule info fl fz06 mt3">
+                    <div class="fl">
+                        <img src="img/icon1.png">
+                        阅读 (<span ng-bind="info.TotalReadTimes+400">400</span>)
+                    </div>
+                    <div class="fr">
+                        <img src="img/icon2.png">
+                        评论 (<span ng-bind="info.TotalCommentCount">5</span>)
+                    </div>
+                </div>
+            </div>
+
+            <div class="contentbottom"></div>
+        </div>
+
+    </div>
+</div>
+<div class="oh" ng-controller="commentpage">
+
+    <!--评论开始-->
+    <div class="commentWrap" id="commentWrap" >
+        <div class="hr mt3 tc pr">
+            <div class="w"></div>
+            <span class="green fz08 whitebg pa tc">大家说</span>
+        </div>
+
+        <!-- 评论列表 开始 -->
+        <ul class="oh mt5" >
+
+            <li class="oh cb pr" ng-repeat="x in commentlist">
+                <div class="userdiv oh">
+                    <!--type=0 开始-->
+                    <div ng-if="x.Type==0">
+                    <!-- 头像 -->
+                    <div class="imgDiv br100 fl" ng-click="inputPlace(x.NickName,type0,x.Id,x.Id)" >
+                        <img class="br100" ng-src="{{x.ImgUrl}}"/>
+                    </div>
+                    <!--姓名 内容-->
+                    <div class="fr ml3 content" >
+                        <h2 class="fz065 black5 mt3">
+                            <span ng-click="inputPlace(x.NickName,type0,x.Id,x.Id)" ng-bind="x.NickName"></span>
+                        </h2>
+                        <p class="fz06 mt3 lh120" ng-click="inputPlace(x.NickName,type0,x.Id,x.Id)" ng-bind="x.Content"></p>
+                    </div>
+                    </div>
+                    <!--type=0 结束-->
+                    <!--type=1 开始-->
+                    <div ng-if="x.Type==2 || x.Type==1">
+                    <!-- 头像 -->
+                    <div class="imgDiv br100 fl" ng-click="inputPlace(x.NickName,type1,x.Id,x.CommentId)" >
+                        <img class="br100" ng-src="{{x.ImgUrl}}"/>
+                    </div>
+                    <!--姓名 内容-->
+                    <div class="fr ml3 content" >
+                        <h2 class="fz065 black5 mt3">
+                            <span ng-click="inputPlace(x.NickName,type1,x.Id,x.CommentId)" ng-bind="x.NickName"></span>
+                            <span class="black">回复</span>
+                            <span ng-click="inputPlace(x.RelationNickName,type1,x.RelationId,x.CommentId)" ng-bind="x.RelationNickName"></span></h2>
+                        <p class="fz06 mt3 lh120" ng-bind="x.Content" ng-click="inputPlace(x.NickName,type1,x.Id,x.CommentId)"></p>
+                    </div>
+                    </div>
+                    <!--type=1 结束-->
+                </div>
+
+                <!--点赞 开始-->
+                <div class="like fz06  pa right" ng-click="c=!c;updatePraise(x.Id)" ng-controller="praise">
+                    <!--已点-->
+                    <div ng-if="x.IsMyPraise==true">
+                        <div ng-hide="c">
+                            <!--点赞效果-->
+                            <div class="add tc w pr tored2" style="height:.7rem;">
+                                <span class="pa w left " id="cmy" ng-bind="'+1'"></span>
+                            </div>
+                            <!--点赞按钮-->
+                            <div class="box lh150 cb pr tored">
+                                赞 <span class="num" ng-bind="x.PraiseCount+5">5</span>
+                            </div>
+                        </div>
+                        <div ng-show="c">
+                            <!--点赞效果-->
+                            <div class="add tc w pr" style="height:.7rem;">
+                                <span class="pa w left" ng-bind="'+1'"></span>
+                            </div>
+                            <!--点赞按钮-->
+                            <div class="box lh150 cb pr">
+                                赞 <span class="num" ng-bind="x.PraiseCount+5-1"></span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--未点-->
+                    <div ng-if="x.IsMyPraise==false">
+                        <div ng-hide="c">
+                            <!--点赞效果-->
+                            <div class="add tc w pr" style="height:.7rem;">
+                                <span class="pa w left" ng-bind="'+1'"></span>
+                            </div>
+                            <!--点赞按钮-->
+                            <div class="box lh150 cb pr">
+                                赞 <span class="num" ng-bind="x.PraiseCount+5"></span>
+                            </div>
+                        </div>
+                        <div ng-show="c">
+                            <!--点赞效果-->
+                            <div class="add tc w pr tored2" style="height:.7rem;">
+                                <span class="pa w left " ng-bind="'+1'"></span>
+                            </div>
+                            <!--点赞按钮-->
+                            <div class="box lh150 cb pr tored">
+                                赞 <span class="num" ng-bind="x.PraiseCount+5+1"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--点赞 结束-->
+            </li>
+            <div class="seeMore bule fz08 tc lh150" ng-click="readMore();" ng-if="count>=100">加载更多</div>
+
+        </ul>
+        <!--评论列表 结束-->
+
+    </div>
+
+    <!--发布评论开始-->
+    <div class="postComment pf greenbg bottom left">
+        <form name="contentform">
+            <input name="content" class="fz07 lh180 olm" type="text" placeholder="{{placeholder}}" ng-model="inputtext" data-key="focuss"/>
+            <button class="green fz07 whitebg olm" type="button" ng-click="sub(inputtext,info.Id)">发布</button>
+        </form>
+        <!--error-->
+        <div class="pa greenbg white fz06 tips lh150 hide error" id="formerror">不能为空</div>
+        <!--   success   -->
+        <div class="pa greenbg white fz06 tips lh150 hide success" id="formsuccess">发布成功!</div>
+
+    </div>
+    <!--发布评论结束-->
+
+</div>
+
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+<script src="js/heng.js"></script>
+<script src="js/app3.js"></script>
+
+</body>
+</html>
