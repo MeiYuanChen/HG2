@@ -81,38 +81,35 @@
 <script src="js/swiper.min.js"></script>
 <script src="js/choumei.min2.js"></script>
 <script type="text/javascript" src="http://weixin.jxt189.com/WeiEngine/Service/js/jweixin.js"></script>
-<script>
-    $(document).ready(function(){
-        WXConfig("5657522134546163946");
+<script type="text/javascript">
+
+    var title = 'ºã¸çÓÐ»°Ëµ';
+    var description = 'ºã¸çÓÐ»°Ëµ';
+    var logo = 'http://hd.jxt189.com/poll/images/4782270282212248094.png';
+
+    var sharedLink = 'http://weixin.jxt189.com/WeiEngine/OAuth2/Authorization.aspx?appcode=5693024816932578630&type=snsapi_base&redirect_uri=http%3a%2f%2fhd.jxt189.com%2fheng2%2fsignin-weixinauth%3fredirectUri%3dhttp%253a%252f%252fhd.jxt189.com%252fheng2%252fAdmin%252fWeixin%252fAuthorize%253fredirectUri%253dhttp%253a%252f%252fhd.jxt189.com%252fheng2%252fHg%252findex.html';
+
+
+    wx.ready(function () {
+        var wechatShareUri = {
+            title: title,
+            desc: description,
+            link: sharedLink,
+            imgUrl: logo
+        };
+        var momentsShareUri = {
+            title: title,
+            desc: description,
+            link: sharedLink,
+            imgUrl: logo
+        };
+        wx.onMenuShareAppMessage(wechatShareUri);
+        wx.onMenuShareTimeline(momentsShareUri);
+        HideMenuItems();
     });
 
-    wx.ready(function(){
-        wx.onMenuShareTimeline({
-            title: '天翼杯-市直高中生辩论赛', // 分享标题
-            link: 'http://site.jxt189.com/chenmeiyuan/JMbianluansai/debateGroup.html', // 分享链接
-            imgUrl: 'http://site.jxt189.com/chenmeiyuan/JMbianluansai/i/logo.png', // 分享图标
-            success: function () {
-                // 用户确认分享后执行的回调函数
-            },
-            cancel: function () {
-                // 用户取消分享后执行的回调函数
-            }
-        });
-
-        wx.onMenuShareAppMessage({
-            title: '天翼杯-市直高中生辩论赛！', // 分享标题
-            desc: '投出你最心仪的辩论组', // 分享描述
-            link: 'http://site.jxt189.com/chenmeiyuan/JMbianluansai/debateGroup.html', // 分享链接
-            imgUrl: 'http://site.jxt189.com/chenmeiyuan/JMbianluansai/i/logo.png', // 分享图标
-            type: '', // 分享类型,music、video或link，不填默认为link
-            dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
-            success: function () {
-                // 用户确认分享后执行的回调函数
-            },
-            cancel: function () {
-                // 用户取消分享后执行的回调函数
-            }
-        });
+    $(function () {
+        WXConfig('5693024816932578630');
     });
 </script>
 </body>
