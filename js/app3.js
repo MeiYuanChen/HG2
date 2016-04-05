@@ -90,13 +90,22 @@ var endcommentpage=100;
 var comment_page_api = "/api/heng/getCommentPage?themeId="+iid+"&pageIndex="+startcommentpage+"&pageSize="+endcommentpage;
 var comment_page_url = Heng.options.base_url + comment_page_api + "&Authorization=" + Heng.getToken();// 请求微信用户信息地址
 app.controller('commentpage',function($scope,$http){
+    var postCommentdiv=angular.element(".postComment");
+    var inputtext=angular.element("input");
+    var focu=function(){
+        inputtext.focus();
+        postCommentdiv.css({"z-index":"9"});
+    };
+    inputtext.on("focus",function(){
+        postCommentdiv.css({"z-index":"9"});
+    });
 
     //input text placeholder内容
     $scope.placeholder="我来说说～";
     var cmyname,cmytype=0,cmyRid=0,cmyCid=0;
     $scope.inputPlace=function(name,type,Rid,Cid){
-        var inputtext=angular.element("input");
-        inputtext.focus();
+        focu();
+        postCommentdiv.css({"z-index":"9"});
         $scope.placeholder="回复"+name;
         if(type=="type0"){
             type=0;
@@ -141,6 +150,7 @@ app.controller('commentpage',function($scope,$http){
                 success.fadeOut("slow");
             },3000);
             console.log("发布评论");
+            postCommentdiv.css({"z-index":"2"});
             setTimeout(function(){
                 $http.get(comment_page_url).success(function(response){
                     $scope.commentlist=response.List;
@@ -211,11 +221,22 @@ app.controller('mythemelist',function($scope,$http){
 var mycomment_list_api = "/api/heng/getMyCommentList?themeId="+iid;
 var mycomment_list_url = Heng.options.base_url + mycomment_list_api + "&Authorization=" + Heng.getToken();// 请求微信用户信息地址
 app.controller('mycommentlistCtrl',function($scope,$http){
+    var postCommentdiv=angular.element(".postComment");
+    var inputtext=angular.element("input");
+    var focu=function(){
+        inputtext.focus();
+        postCommentdiv.css({"z-index":"9"});
+    };
+    inputtext.on("focus",function(){
+        postCommentdiv.css({"z-index":"9"});
+    });
 
     //input text placeholder内容
     $scope.placeholder="我来说说～";
     var cmyname,cmytype=0,cmyRid=0,cmyCid=0;
     $scope.inputPlace=function(name,type,Rid,Cid){
+        focu();
+        postCommentdiv.css({"z-index":"9"});
         $scope.placeholder="回复"+name;
         var inputtext=angular.element("input");
         inputtext.focus();
@@ -258,6 +279,7 @@ app.controller('mycommentlistCtrl',function($scope,$http){
             headers:{ 'Content-Type': 'application/json'}
         }).success(function(){
             console.log("发布评论");
+            postCommentdiv.css({"z-index":"2"});
             setTimeout(function(){
                 $http.get(mycomment_list_url).success(function(response){
                     $scope.mycommentlist=response.List;
