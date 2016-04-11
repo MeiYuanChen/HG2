@@ -9,7 +9,7 @@ var iid=Heng.getIid();
 var weixin_userinfo_api = "/api/weixin/userInfo";
 var url = Heng.options.base_url + weixin_userinfo_api + "?Authorization=" + Heng.getToken();// 请求微信用户信息地址
 app.controller('weixin',function($scope,$http){
-
+    WXConfig('5693024816932578630');
     $http.get(url).success(
         function(response) {
             $scope.data=response.Result;
@@ -322,6 +322,35 @@ app.controller("praise",function($scope,$http){
     };
 });
 
+//微信分享
+var title = '恒哥有话说';
+var description = '恒哥有话说';
+var logo = 'http://site.jxt189.com/nledu/images/HGshare.jpg';
+
+var sharedLink = 'http://weixin.jxt189.com/WeiEngine/OAuth2/Authorization.aspx?appcode=5693024816932578630&type=snsapi_base&redirect_uri=http%3a%2f%2fhd.jxt189.com%2fheng2%2fsignin-weixinauth%3fredirectUri%3dhttp%253a%252f%252fhd.jxt189.com%252fheng2%252fAdmin%252fWeixin%252fAuthorize%253fredirectUri%253dhttp%253a%252f%252fhd.jxt189.com%252fheng2%252fHg%252findex.html';
+
+
+wx.ready(function () {
+    var wechatShareUri = {
+        title: title,
+        desc: description,
+        link: sharedLink,
+        imgUrl: logo
+    };
+    var momentsShareUri = {
+        title: title,
+        desc: description,
+        link: sharedLink,
+        imgUrl: logo
+    };
+    wx.onMenuShareAppMessage(wechatShareUri);
+    wx.onMenuShareTimeline(momentsShareUri);
+    HideMenuItems();
+});
+
+$(function () {
+    WXConfig('5693024816932578630');
+});
 
 
 

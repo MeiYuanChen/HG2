@@ -77,11 +77,11 @@ p{text-overflow: ellipsis;word-break:break-all;}
 .indexbg .head .imgDiv{width:100%;height:100%;}
 .indexbg .head .msgNum{padding: .05rem;min-width: .75rem;  height: .75rem;  text-align: center;  line-height: .8rem;  top: -15%;  right: 25%;}
  .info .fl img,.info .fr img{width:.5rem !important;height:.5rem}
- .info{bottom: 5%; left: 5%;  width: 86%;}
+ .info{bottom: 5%;  right:9%;  width: 77%;}
 .indexbg .main-img span.more{left:5%;}
 .indexbg .main-img .wrap{width:86%;margin-left:5%;max-height:79.2%;}
 .indexbg .main-img .imgDiv img{width:100%;height:auto}
-.indexbg .main-img h1 .oh{width: 84%; height: .72rem;  display: inline-block;}
+.indexbg .main-img h1 .oh{width: 84%; height: .75rem;  display: inline-block;line-height:120%}
 .contentbg2{background: url("../img/contentbg2.png") no-repeat !important;background-size: 100% 100% !important;}
 /*话题内容*/
 .topic{background:url("../img/columnbg.jpg") repeat-y;background-size:100% auto;padding:0 .5rem;}
@@ -135,13 +135,13 @@ border-bottom-left-radius:0;border-bottom-right-radius:0;}
 .postComment .tips{padding:0 .8rem;top:-1.5rem;left:36%;border-radius:.5em;}
 /*column.html*/
 .column .indexbg{z-index:-1;}
-.column .topic .imgDiv{height:2rem;width:2rem;margin-top:-.5rem;}
-.column .contents{max-height:87vh;top:13%;padding:0 5% 0 4%;width:90%;overflow-y:scroll;overflow-x:hidden;}
+.column .topic .imgDiv{height:1.5rem;width:1.5rem;margin-top:-.3rem;}
+.column .contents{max-height:87vh;top:10%;padding:0 5% 0 4%;width:90%;overflow-y:scroll;overflow-x:hidden;}
 .column .content{margin-bottom: -.7rem;background: url("../img/content.png") no-repeat;  background-size: 100% 92%;  background-position-y: 92%;  min-height: 8.5rem;  padding: 8.5% 5% 5% 5%;}
 .column .imgDiv img{height:auto}
 .column .imgDiv{height:5.5rem;}
 .column .info{width:65%}
-.column .content h2 .oh{height:.63rem;width:91.5%;display:inline-block}
+.column .content h2 .oh{height:.65rem;width:91.5%;display:inline-block;line-height:120%}
 /*column2.html*/
 .column img.header{width:45%}
 .column .tips{background:url("../img/tips.png") no-repeat;background-size:100% 100%;padding:.1rem .2rem .3rem .2rem;top:0;right:.5rem;}
