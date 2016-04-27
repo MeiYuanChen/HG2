@@ -207,7 +207,7 @@ app.controller('mythemelist',function($scope,$http){
         var unread_url=Heng.options.base_url + "/api/heng/updateUnread?themeId="+mythemeid + "&Authorization=" + Heng.getToken();// 请求微信用户信息地址
         $http.get(unread_url).success(function(response){
 
-                $http.get(mytheme_list_url).success(function(response){$scope.mylist=response.List;});
+                $http.get(mytheme_list_url).success(function(response){$scope.mylist=response.List;$scope.count=response.Count;});
 
 
         });
