@@ -6,10 +6,10 @@
     <title>我的话题列表</title>
     <link rel="stylesheet" href="css/app.css">
 </head>
-<body class="column" ng-app="myApp" ng-controller="lasthref">
+<body class="column" ng-app="myApp" ng-controller="lasthref" ng-controller="mythemelist">
 <div class="pa left top w hwh indexbg"></div>
 
-    <div class="topic mt5">
+    <div class="topic mt5" >
         <div class="header">
             <a class="back fl" ng-href="index.html#{{lh}}"></a>
             <h1 class="yellow fr fz08 lh120" ng-controller="weixin">
@@ -23,7 +23,7 @@
         </div>
     </div>
 
-    <ul class="contents pa left" ng-controller="mythemelist">
+    <ul class="contents pa left" >
 
         <li class="content pr" ng-repeat="x in mylist" >
             <a class="tdn" ng-href="mecontent.html#iid={{x.Theme.Id}}&{{lh}}" ng-click="updateUnread(x.Theme.Id,x.Unread.UnreadCount)">
