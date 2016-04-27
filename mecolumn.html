@@ -14,6 +14,7 @@
             <a class="back fl" ng-href="index.html#{{lh}}"></a>
             <h1 class="yellow fr fz08 lh120" ng-controller="weixin">
                 <!--头像-->
+                {{count}}
                 <div class="imgDiv br100 fl oh">
                     <img ng-src="{{data.HeadImgUrl}}"/>
                 </div>
@@ -35,7 +36,7 @@
             <div class="cb bule info fr fz06 mt3">
                 <div class="fl">
                     <img src="img/icon1.png">
-                    {{count}}阅读 (<span ng-bind="x.Theme.TotalReadTimes"></span>)
+                    阅读 (<span ng-bind="x.Theme.TotalReadTimes"></span>)
                 </div>
                 <div class="fr">
                     <img src="img/icon2.png">
