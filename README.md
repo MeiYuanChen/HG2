@@ -1,6 +1,6 @@
 <h1>说明文件</h1>
 <h3><ol>
-<li>技术选型:HTML5+CSS3+jQuery+javascript+angular.js1.4.6</li>
+<li>技术选型:HTML5+CSS3+Swiper3.0+jQuery+javascript+angular.js1.4.6</li>
 <li>其他应用到的技术:css reset,git</li>
 <li>项目描述：每周发布话题，评论话题,后台管理员回复用户的评论</li>
 <li>特色：能实时查看回复,个人专题页方便看到自己评论过的话题</li>
