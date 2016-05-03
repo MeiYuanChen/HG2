@@ -1,4 +1,5 @@
 <h1>说明文件</h1>
+<h4 style="color:red">4月30日数据出现异常</h4>
 <h3><ol>
 <li>技术选型:HTML5+CSS3+Swiper3.0+jQuery+javascript+angular.js1.4.6</li>
 <li>其他应用到的技术:css reset,git</li>
