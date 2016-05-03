@@ -9,4 +9,4 @@
 </ol>
 </h3>
 <h4>数据接口都是基于微信的,只能扫二维码才能看到效果:</h4>
-<img src="img/erweima.png">
+<img src="img/heng2erweima.jpg">
