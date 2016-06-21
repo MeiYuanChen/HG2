@@ -41,10 +41,6 @@ Heng.setToken();
 
 //响应式 改变html字体大小
 (function (doc, win) {
-	var like=angular.element(".like");
-	var add=like.find(".add");
-	add.css("-webkit-animation-play-state","paused");
-
 
 	var docEl = doc.documentElement,
 		resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',

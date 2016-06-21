@@ -13,7 +13,7 @@ var wxVm=new Vue({
                 type:'GET',
                 url:weixinurl,
                 success:function(data){
-                    vm.msg=data;
+                    wxVm.msg=data;
                 }
             })
         }
