@@ -51,7 +51,7 @@ window.onload = function() {
             }
         });
 
-    },500);
+    },10);
 
 
 };
