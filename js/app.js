@@ -17,6 +17,7 @@ window.onload = function() {
                     type:'GET',
                     url:weixinurl,
                     success:function(data){
+                        console.log(data);
                         wxVm.msg=data;
                     }
                 })
@@ -24,8 +25,8 @@ window.onload = function() {
         }
     });
     wxVm.getData();
-    wxVm.$watch('msg', function (newVal, oldVal) {
-        // 这个回调将在 `vm.a`  改变后调用
+    wxVm.$watch('msg', function () {
+        // 这个回调将在 `wxVm.msg`  改变后调用
         var mySwiper = new Swiper(".swiper-container", {
             slidesPerView: "auto",
             centeredSlides: !0,
