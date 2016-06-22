@@ -40,9 +40,9 @@
                 <h1 class="bule oh fz07 ml5 pt5"><span class="oh"></span><span>...</span></h1>
                 <div class="wrap mt3 oh">
                     <div class="imgDiv ">
-                        <img src="..."/>
+                        <img :src="msg.Thumbnail"/>
                     </div>
-                        <p class=" pr lh160 oh mt3 black" id="mainImgP"></p>
+                        <p class=" pr lh160 oh mt3 black" id="mainImgP" v-bind="msg.Desc"></p>
                     </div>
                 <div class="cb bule info pa">
                     <div class="fl">

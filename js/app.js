@@ -9,7 +9,7 @@ window.onload = function() {
     var wxVm=new Vue({
         el: '#example',
         data:{
-            msg:[]
+            msg:''
         },
         methods:{
             getData:function(){
@@ -50,4 +50,25 @@ window.onload = function() {
     });
 
 };
+//6个话题信息
+var theme_page_six_api = "/api/heng/getThemePage?pageIndex=1&pageSize=6";
+var theme_page_six_url = Heng.options.base_url + theme_page_six_api + "&Authorization=" + Heng.getToken();// 请求微信用户信息地址
+var six=new Vue({
+    el:'#themeListWrapper',
+    data:{
+      msg:''
+    },
+    methods:{
+        getData:function(){
+            $.ajax({
+                type:'GET',
+                url:theme_page_six_url,
+                success:function(data){
+                    this.msg=data.List;
+                }
+            })
+        }
+    }
+});
+six.getData();
 
