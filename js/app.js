@@ -17,7 +17,7 @@ window.onload = function() {
                     type:'GET',
                     url:weixinurl,
                     success:function(data){
-                        wxVm.msg=data;
+                        this.msg=data;
                     }
                 })
             }
