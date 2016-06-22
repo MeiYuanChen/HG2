@@ -11,49 +11,53 @@
     <link rel="stylesheet" href="css/choumei.min.css">
     <link rel="stylesheet" href="css/app.css">
 
-
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jweixin.js"></script>
+    <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <script src="js/heng.js"></script>
+    <script src="js/app3.js"></script>
 </head>
 
-<body class="indexbg">
+<body class="indexbg" ng-app="myApp">
 
 
-<div class="swiper-container">
+<div class="swiper-container" ng-controller="lasthref">
     <!--头部 头像 开始-->
     <div class="header">
         <img class="fl" src="img/header.png">
-        <div class="head fr pr" id="example">
-            <a href="##">
-            <div class="imgDiv">
-                <img class="br100" :src="msg.HeadImgUrl"/>
-            </div>
-            <div class="pa msgNum redbg white fz06 br100"><span v-bind="msg.AllCount"></span></div>
+        <div class="head fr pr " ng-controller="unreadInfo">
+            <a ng-href="mecolumn.html#{{lh}}">
+                <div class="imgDiv" ng-controller="weixin">
+                    <img class="br100" ng-src="{{data.HeadImgUrl}}"/>
+                </div>
+                <div class="pa msgNum redbg white fz06 br100" ng-if="unread.AllCount" ><span ng-bind="unread.AllCount"></span></div>
             </a>
         </div>
     </div>
     <!--头部 头像 结束-->
-    <div class="swiper-wrapper" id="themeListWrapper">
+    <div class="swiper-wrapper" ng-controller="themepagesix" id="themeListWrapper">
 
-        <div class="swiper-slide">
+        <div class="swiper-slide" ng-repeat="x in list">
 
             <div class="main-img fz06 pr" >
-                <a class="tdn" href="##">
-                <h1 class="bule oh fz07 ml5 pt5"><span class="oh"></span><span>...</span></h1>
-                <div class="wrap mt3 oh">
-                    <div class="imgDiv ">
-                        <img :src="msg.Thumbnail"/>
+                <a class="tdn" ng-href="content.html#iid={{x.Id}}&{{lh}}" ng-click="updateReadTimes(x.Id)">
+                    <h1 class="bule oh fz07 ml5 pt5"><span class="oh" ng-bind="x.Title"></span><span ng-if="x.Title.length>13">...</span></h1>
+                    <div class="wrap mt3 oh">
+                        <div class="imgDiv ">
+                            <img ng-src="{{x.Thumbnail}}"/>
+                        </div>
+                        <p class=" pr lh160 oh mt3 black" id="mainImgP" ng-bind="x.Desc"></p>
                     </div>
-                        <p class=" pr lh160 oh mt3 black" id="mainImgP" v-bind="msg.Desc"></p>
+                    <div class="cb bule info pa">
+                        <div class="fl">
+                            <img src="img/icon1.png">
+                            阅读 (<span ng-bind="x.TotalReadTimes+1"></span>)
+                        </div>
+                        <div class="fr">
+                            <img src="img/icon2.png">
+                            评论 (<span ng-bind="x.TotalCommentCount"></span>)
+                        </div>
                     </div>
-                <div class="cb bule info pa">
-                    <div class="fl">
-                        <img src="img/icon1.png">
-                        阅读 (<span></span>)
-                    </div>
-                    <div class="fr">
-                        <img src="img/icon2.png">
-                        评论 (<span></span>)
-                    </div>
-                </div>
                 </a>
             </div>
 
@@ -63,8 +67,8 @@
 
         <!--最后一页 查看更多话题-->
         <div class="swiper-slide">
-            <a href="##">
-            <div class="main-img fz03 pr contentbg2"></div>
+            <a ng-href="column.html#{{lh}}">
+                <div class="main-img fz03 pr contentbg2"></div>
             </a>
         </div>
         <!--最后一页 查看更多话题-->
@@ -76,10 +80,7 @@
 
 
 <script src="js/swiper.min.js"></script>
-<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="js/vue.js"></script>
-<script src="js/heng.js"></script>
-<script src="js/app.js"></script>
+<script src="js/choumei.min2.js"></script>
 
 </body>
 </html>
